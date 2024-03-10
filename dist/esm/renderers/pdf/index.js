@@ -10,7 +10,8 @@ import PDFControls from "./components/PDFControls";
 import { PDFProvider } from "./state";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = "//unpkg.com/pdfjs-dist@".concat(pdfjs.version, "/build/pdf.worker.min.js");
+var ipAddress = localStorage.getItem("ipAddress");
+pdfjs.GlobalWorkerOptions.workerSrc = "//".concat(ipAddress, "/getpdfworker");
 var PDFRenderer = function (_a) {
     var mainState = _a.mainState;
     return (React.createElement(PDFProvider, { mainState: mainState },

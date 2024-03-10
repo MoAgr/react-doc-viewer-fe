@@ -15,7 +15,8 @@ var PDFControls_1 = __importDefault(require("./components/PDFControls"));
 var state_1 = require("./state");
 require("react-pdf/dist/esm/Page/AnnotationLayer.css");
 require("react-pdf/dist/esm/Page/TextLayer.css");
-react_pdf_1.pdfjs.GlobalWorkerOptions.workerSrc = "//unpkg.com/pdfjs-dist@".concat(react_pdf_1.pdfjs.version, "/build/pdf.worker.min.js");
+var ipAddress = localStorage.getItem("ipAddress");
+react_pdf_1.pdfjs.GlobalWorkerOptions.workerSrc = "//".concat(ipAddress, "/getpdfworker");
 var PDFRenderer = function (_a) {
     var mainState = _a.mainState;
     return (react_1.default.createElement(state_1.PDFProvider, { mainState: mainState },
