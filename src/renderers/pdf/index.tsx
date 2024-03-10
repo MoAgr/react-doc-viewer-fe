@@ -9,7 +9,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
 // let ipAddress = localStorage.getItem("ipAddress");
-pdfjs.GlobalWorkerOptions.workerSrc = "//localhost:4000/getpdfworker";
+pdfjs.GlobalWorkerOptions.workerSrc = "mohit";
 
 const PDFRenderer: DocRenderer = ({ mainState }) => {
   return (
