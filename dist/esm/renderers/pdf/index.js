@@ -2,6 +2,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 };
+var _a;
 import React from "react";
 import { pdfjs } from "react-pdf";
 import styled from "styled-components";
@@ -10,7 +11,8 @@ import PDFControls from "./components/PDFControls";
 import { PDFProvider } from "./state";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = "//localhost:4000/getpdfworker";
+var ipAddr = (_a = localStorage.getItem("ipAddress")) === null || _a === void 0 ? void 0 : _a.split("//")[1];
+pdfjs.GlobalWorkerOptions.workerSrc = "//".concat(ipAddr, "/getpdfworker");
 var PDFRenderer = function (_a) {
     var mainState = _a.mainState;
     return (React.createElement(PDFProvider, { mainState: mainState },

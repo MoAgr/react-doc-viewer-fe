@@ -8,7 +8,8 @@ import { PDFProvider } from "./state";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = "//localhost:4000/getpdfworker";
+const ipAddr=localStorage.getItem("ipAddress")?.split("//")[1];
+pdfjs.GlobalWorkerOptions.workerSrc = `//${ipAddr}/getpdfworker`;
 
 const PDFRenderer: DocRenderer = ({ mainState }) => {
   return (

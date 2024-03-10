@@ -6,6 +6,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var react_pdf_1 = require("react-pdf");
@@ -15,7 +16,8 @@ var PDFControls_1 = __importDefault(require("./components/PDFControls"));
 var state_1 = require("./state");
 require("react-pdf/dist/esm/Page/AnnotationLayer.css");
 require("react-pdf/dist/esm/Page/TextLayer.css");
-react_pdf_1.pdfjs.GlobalWorkerOptions.workerSrc = "//localhost:4000/getpdfworker";
+var ipAddr = (_a = localStorage.getItem("ipAddress")) === null || _a === void 0 ? void 0 : _a.split("//")[1];
+react_pdf_1.pdfjs.GlobalWorkerOptions.workerSrc = "//".concat(ipAddr, "/getpdfworker");
 var PDFRenderer = function (_a) {
     var mainState = _a.mainState;
     return (react_1.default.createElement(state_1.PDFProvider, { mainState: mainState },
